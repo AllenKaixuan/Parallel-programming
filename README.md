@@ -1,3 +1,3 @@
 # universe
 The start of learning CS.
-Factually,my major is medicine.
+Wish having a new start.
