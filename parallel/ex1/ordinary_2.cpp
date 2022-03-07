@@ -10,7 +10,7 @@ void ordinary(long long int sum, int a[], long long int n)
 int main()
 {
 
-    for (int m = 15; m < 21; m++)
+    for (int m = 15; m < 20; m++)
     {
         double diff = 0;
         int counter = 0;

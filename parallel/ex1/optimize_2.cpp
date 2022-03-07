@@ -2,14 +2,14 @@
 #include <sys/time.h>
 #include <math.h>
 using namespace std;
-void optimize(long int a, long int b, long int c, long int d, int *l, long long int n)
+void optimize(long int a, long int b,  int *l, long long int n)
 {
-    for (int i = 0; i < n; i += 8)
+    for (int i = 0; i < n; i += 4)
     {
         a += l[i] + l[i + 1];
         b += l[i + 2] + l[i + 3];
-        c += l[i + 4] + l[i + 5];
-        d += l[i + 6] + l[i + 7];
+        // c += l[i + 4] + l[i + 5];
+        // d += l[i + 6] + l[i + 7];
     }
       
 }
@@ -17,7 +17,7 @@ void optimize(long int a, long int b, long int c, long int d, int *l, long long 
 
 int main()
 {
-    for (int m = 15; m < 21; m++)
+    for (int m = 15; m < 20; m++)
     {
         double diff = 0;
         int counter = 0;
@@ -33,8 +33,8 @@ int main()
                 a[i] = i * i + 1;
             struct timeval tv_begin, tv_end; //²âÁ¿Ê±¼ä
             gettimeofday(&tv_begin, NULL);
-            optimize(sum_0, sum_1, sum_2, sum_3, a, n);
-            sum = sum_0 + sum_1 + sum_2 + sum_3;
+            optimize(sum_0, sum_1, a, n);
+            sum = sum_0 + sum_1 ;
             gettimeofday(&tv_end, NULL);
 
             diff += 1000000 * (tv_end.tv_sec - tv_begin.tv_sec) + (tv_end.tv_usec - tv_begin.tv_usec);

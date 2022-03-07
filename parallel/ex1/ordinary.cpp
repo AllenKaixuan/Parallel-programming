@@ -35,7 +35,7 @@ int main()
             for (int i = 0; i < n; i++)
             { //初始化矩阵
                 for (int j = 0; j < n; j++)
-                    b[i][j] = i + j;
+                    b[i][j] += i + j;
             }
 
             struct timeval tv_begin, tv_end; //测量时间

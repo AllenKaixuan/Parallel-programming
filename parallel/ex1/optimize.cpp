@@ -8,7 +8,7 @@ void optimize(int *a, int **b, int *sum, int n)
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
-            sum[i] = b[i][j] * a[i];
+            sum[i] += b[i][j] * a[i];
     }
 }
 int main()
